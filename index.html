@@ -91,7 +91,7 @@
             border: 1px solid #1e2230;
             border-radius: 16px;
             margin-bottom: 12px;
-            padding: 20px 16px; /* Tăng padding một chút cho đẹp vì đã bỏ chữ Hàng */
+            padding: 20px 16px; /* Đã tăng khoảng cách rộng rãi, sạch sẽ */
             text-align: left;
             transition: 0.3s;
         }
@@ -370,10 +370,10 @@
     <div id="toast" class="toast">✓ Đã sao chép Script thành công!</div>
 
     <script>
-        // Cấu hình Tên ảnh nền tương ứng cho từng Tab game ở đây
+        // Cấu hình Tên ảnh nền tương ứng cho từng Tab game
         const tabImages = {
-            'blox': 'dragon.jpg',  // Ảnh nền khi đang ở tab Blox Fruits
-            'gag2': 'gag2.jpg'     // Bạn hãy tải ảnh tên là gag2.jpg lên kho GitHub của bạn để nó hiện nhé!
+            'blox': 'dragon.jpg',  // Khi bấm tab Blox Fruits sẽ hiện ảnh dragon.jpg của bạn
+            'gag2': 'gag2.jpg'     // Bạn hãy tải ảnh tên là gag2.jpg lên kho GitHub của bạn để nó tự hiện nhé!
         };
 
         // NƠI LƯU TRỮ CÁC SCRIPT
@@ -391,13 +391,10 @@
             'gag4_sample': '-- Script Gag2 Hàng 4 đang chờ cập nhật'
         };
 
-        let currentActiveTab = 'blox'; // Biến ghi nhớ tab hiện tại để bật đúng ảnh nền công thức
+        let currentActiveTab = 'blox'; 
         const modal = document.getElementById('scriptModal');
         const toast = document.getElementById('toast');
         const modalBg = document.getElementById('modalBackgroundImage');
-
-        // Hàm khởi tạo ảnh nền ban đầu
-        modalBg.style.backgroundImage = `url('${tabImages[currentActiveTab]}')`;
 
         // Hàm đổi tab
         function switchTab(tabName) {
@@ -418,7 +415,7 @@
         function openModal(title, databaseKey) {
             document.getElementById('modalTargetTitle').innerText = "🔥 " + title;
             
-            // Cập nhật ảnh nền popup dựa theo tab game đang đứng
+            // Cập nhật ảnh nền popup dựa theo tab game đang chọn
             modalBg.style.backgroundImage = `url('${tabImages[currentActiveTab]}')`;
             
             const currentScript = scriptDatabase[databaseKey] || '-- Script đang được cập nhật...';
