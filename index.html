@@ -262,47 +262,5 @@
                 <div class="modal-subtitle">Script — Copy & Paste into your executor</div>
                 <div class="code-box" id="scriptCodeText">loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptPrime/PlsHub-BestUpdated/refs/heads/main/Txt"))()</div>
                 <button class="btn-purple" onclick="copyScript()">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                    Copy Script
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="toast" class="toast">Đã sao chép PlsHub Script thành công!</div>
-
-    <script>
-        const modal = document.getElementById('scriptModal');
-        const toast = document.getElementById('toast');
-
-        function openModal() {
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            modal.classList.remove('active');
-        }
-
-        function closeModalOutside(e) {
-            if (e.target === modal) {
-                closeModal();
-            }
-        }
-
-        function copyScript() {
-            const code = document.getElementById('scriptCodeText').innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                toast.classList.add('show');
-                closeModal();
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 2500);
-            }).catch(() => {
-                alert('Trình duyệt lỗi, hãy copy thủ công đoạn code!');
-            });
-        }
-    </script>
-
-</body>
-            </html>
-                
+                    <svg width="16" height="16" viewBox="0 0 2
+                        
