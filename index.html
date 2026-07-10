@@ -18,9 +18,9 @@
             text-align: center;
         }
         .container {
-            max-width: 480px;
+            max-width: 540px;
             margin: 0 auto;
-            padding: 40px 16px;
+            padding: 30px 16px;
         }
         .badge {
             background-color: rgba(138, 43, 226, 0.15);
@@ -32,15 +32,13 @@
             font-weight: 700;
             letter-spacing: 1px;
             display: inline-block;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             text-transform: uppercase;
         }
         h1 {
-            font-size: 28pt;
-            margin: 0 0 16px 0;
+            font-size: 26pt;
+            margin: 0 0 8px 0;
             font-weight: 800;
-            color: #ffffff;
-            letter-spacing: -0.5px;
             background: linear-gradient(to right, #b366ff, #ff66cc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -48,83 +46,95 @@
         .subtitle {
             color: #949ba8;
             font-size: 11pt;
-            line-height: 1.5;
-            margin-bottom: 40px;
-            padding: 0 10px;
+            margin-bottom: 30px;
         }
-        .card {
+
+        /* MENU CHUYỂN TRANG (TABS) */
+        .tabs-menu {
+            display: table;
+            width: 100%;
             background-color: #12141c;
             border: 1px solid #1e2230;
-            border-radius: 24px;
+            border-radius: 14px;
+            margin-bottom: 25px;
             overflow: hidden;
+        }
+        .tab-btn {
+            display: table-cell;
+            padding: 14px;
+            color: #7d8594;
+            font-weight: 700;
+            font-size: 11pt;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: center;
+        }
+        .tab-btn.active {
+            background-color: #1e1b33;
+            color: #b366ff;
+            border-bottom: 2px solid #8a2be2;
+        }
+
+        /* NỘI DUNG TRANG CHỨA CÁC KHAY HÀNG */
+        .page-content {
+            display: none;
+        }
+        .page-content.active {
+            display: block;
+        }
+
+        /* THIẾT KẾ KHAY HÀNG NGANG (ROW CARD) */
+        .script-row {
+            display: table;
+            width: 100%;
+            background-color: #12141c;
+            border: 1px solid #1e2230;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            padding: 16px;
             text-align: left;
-            box-shadow: 0 12px 32px rgba(0,0,0,0.6);
             transition: 0.3s;
         }
-        .card:hover {
+        .script-row:hover {
             border-color: #8a2be2;
-            box-shadow: 0 0 25px rgba(138,43,226,0.3);
+            box-shadow: 0 0 15px rgba(138,43,226,0.2);
         }
-        .image-container {
-            width: 100%;
-            position: relative;
-            padding-top: 52%;
-            background-image: url('dragon.jpg'); /* Đã sửa chuẩn theo file dragon.jpg của bạn */
-            background-size: cover;
-            background-position: center;
-            background-color: #161924;
+        .row-info {
+            display: table-cell;
+            vertical-align: middle;
         }
-        .card-content {
-            padding: 24px;
-        }
-        .game-badge {
-            background-color: #1c162e;
-            color: #9966ff;
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 9pt;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .card-title {
-            font-size: 18pt;
-            font-weight: 700;
-            margin: 0 0 8px 0;
-            color: #ffffff;
-        }
-        .card-desc {
-            color: #7d8594;
+        .row-number {
+            color: #8a2be2;
+            font-weight: 800;
             font-size: 11pt;
-            line-height: 1.4;
-            margin-bottom: 24px;
+            margin-bottom: 4px;
         }
-        .btn-purple {
+        .row-title {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+        .row-action {
+            display: table-cell;
+            vertical-align: middle;
+            width: 110px;
+            text-align: right;
+        }
+        .btn-get-sm {
             background: linear-gradient(45deg, #8a2be2, #a855f7);
             color: #ffffff;
             border: none;
-            width: 100%;
-            padding: 15px;
-            border-radius: 12px;
-            font-size: 12pt;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 10pt;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.2s;
-            outline: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(138,43,226,0.3);
+            transition: 0.2s;
         }
-        .btn-purple:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(138,43,226,0.5);
-        }
-        .btn-purple:active {
-            transform: scale(0.98);
+        .btn-get-sm:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(138,43,226,0.4);
         }
 
         /* MODAL POPUP STYLES */
@@ -158,10 +168,18 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.8);
             transform: scale(0.9);
             transition: transform 0.25s ease;
-            position: relative;
         }
         .modal-overlay.active .modal-box {
             transform: scale(1);
+        }
+        .image-container {
+            width: 100%;
+            position: relative;
+            padding-top: 42%;
+            background-image: url('dragon.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: #161924;
         }
         .modal-body {
             padding: 24px;
@@ -171,16 +189,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         .modal-title {
             font-size: 14pt;
             font-weight: 700;
             color: #ffffff;
             margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
         .btn-close {
             background: rgba(255,255,255,0.05);
@@ -194,18 +209,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: 0.2s;
         }
         .btn-close:hover {
             background: #ef4444;
             color: #fff;
-            border-color: #ef4444;
-        }
-        .modal-subtitle {
-            color: #949ba8;
-            font-size: 10pt;
-            font-weight: 600;
-            margin-bottom: 12px;
         }
         .code-box {
             background-color: #07080c;
@@ -221,6 +228,17 @@
             max-height: 120px;
             overflow-y: auto;
             line-height: 1.5;
+        }
+        .btn-purple {
+            background: linear-gradient(45deg, #8a2be2, #a855f7);
+            color: #ffffff;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 11pt;
+            font-weight: 700;
+            cursor: pointer;
         }
         .toast {
             position: fixed;
@@ -245,34 +263,123 @@
 <body>
 
     <div class="container">
-        <div class="badge">Roblox Script Hub</div>
+        <div class="badge">Multi-Game Hub</div>
         <h1>PlsHub System</h1>
-        <div class="subtitle">Hệ thống phân phối Script cao cấp — Copy mượt mà, không giật lag.</div>
+        <div class="subtitle">Hệ thống quản lý và phân phối Script Roblox đa nền tảng.</div>
 
-        <div class="card">
-            <div class="image-container"></div>
-            <div class="card-content">
-                <div class="game-badge">Blox Fruits</div>
-                <div class="card-title">Blox Fruits Hub v3</div>
-                <div class="card-desc">Bản cập nhật mới nhất, tự động farm, săn boss cực đỉnh và mượt mà.</div>
-                <button class="btn-purple" onclick="openModal()">Get Script</button>
+        <div class="tabs-menu">
+            <div id="btn-blox" class="tab-btn active" onclick="switchTab('blox')">Blox Fruits</div>
+            <div id="btn-gag2" class="tab-btn" onclick="switchTab('gag2')">Gag2</div>
+        </div>
+
+        <div id="page-blox" class="page-content active">
+            <div class="script-row">
+                <div class="row-info">
+                    <div class="row-number">HÀNG 1</div>
+                    <h3 class="row-title">Script Banana Hub</h3>
+                </div>
+                <div class="row-action">
+                    <button class="btn-get-sm" onclick="openModal('Script Banana Hub', 'banana')">Get Script</button>
+                </div>
+            </div>
+            <div class="script-row">
+                <div class="row-info">
+                    <div class="row-number">HÀNG 2</div>
+                    <h3 class="row-title">Script Red Hub</h3>
+                </div>
+                <div class="row-action">
+                    <button class="btn-get-sm" onclick="openModal('Script Red Hub', 'red')">Get Script</button>
+                </div>
+            </div>
+            <div class="script-row">
+                <div class="row-info">
+                    <div class="row-number">HÀNG 3</div>
+                    <h3 class="row-title">Script X100Luck</h3>
+                </div>
+                <div class="row-action">
+                    <button class="btn-get-sm" onclick="openModal('Script X100Luck', 'x100luck')">Get Script</button>
+                </div>
+            </div>
+            <div class="script-row">
+                <div class="row-info">
+                    <div class="row-number">HÀNG 4</div>
+                    <h3 class="row-title">Script Tày Hub</h3>
+                </div>
+                <div class="row-action">
+                    <button class="btn-get-sm" onclick="openModal('Script Tày Hub', 'tay')">Get Script</button>
+                </div>
+            </div>
+            <div class="script-row">
+                <div class="row-info">
+                    <div class="row-number">HÀNG 5</div>
+                    <h3 class="row-title">Script Plshub</h3>
+                </div>
+                <div class="row-action">
+                    <button class="btn-get-sm" onclick="openModal('Script Plshub', 'plshub')">Get Script</button>
+                </div>
+            </div>
+            <div class="script-row">
+                <div class="row-info">
+                    <div class="row-number">HÀNG 6</div>
+                    <h3 class="row-title">Script Gex Hub</h3>
+                </div>
+                <div class="row-action">
+                    <button class="btn-get-sm" onclick="openModal('Script Gex Hub', 'gex')">Get Script</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-gag2" class="page-content">
+            <div class="script-row">
+                <div class="row-info">
+                    <div class="row-number">HÀNG 1</div>
+                    <h3 class="row-title">Script Spawned Pet & Seed</h3>
+                </div>
+                <div class="row-action">
+                    <button class="btn-get-sm" onclick="openModal('Script Spawned Pet & Seed', 'pet_seed')">Get Script</button>
+                </div>
+            </div>
+            <div class="script-row">
+                <div class="row-info">
+                    <div class="row-number">HÀNG 2</div>
+                    <h3 class="row-title">Script Weather</h3>
+                </div>
+                <div class="row-action">
+                    <button class="btn-get-sm" onclick="openModal('Script Weather', 'weather')">Get Script</button>
+                </div>
+            </div>
+            <div class="script-row">
+                <div class="row-info">
+                    <div class="row-number">HÀNG 3</div>
+                    <h3 class="row-title">Script Gag2 Mẫu 3</h3>
+                </div>
+                <div class="row-action">
+                    <button class="btn-get-sm" onclick="openModal('Script Gag2 Mẫu 3', 'gag3_sample')">Get Script</button>
+                </div>
+            </div>
+            <div class="script-row">
+                <div class="row-info">
+                    <div class="row-number">HÀNG 4</div>
+                    <h3 class="row-title">Script Gag2 Mẫu 4</h3>
+                </div>
+                <div class="row-action">
+                    <button class="btn-get-sm" onclick="openModal('Script Gag2 Mẫu 4', 'gag4_sample')">Get Script</button>
+                </div>
             </div>
         </div>
     </div>
 
     <div id="scriptModal" class="modal-overlay" onclick="closeModalOutside(event)">
         <div class="modal-box">
-            <div class="image-container" style="padding-top: 40%; background-image: url('dragon.jpg');"></div> <div class="modal-body">
+            <div class="image-container"></div>
+            <div class="modal-body">
                 <div class="modal-header-row">
-                    <h2 class="modal-title">🔥 Script Ready</h2>
+                    <h2 class="modal-title" id="modalTargetTitle">🔥 Script Ready</h2>
                     <button class="btn-close" onclick="closeModal()">×</button>
                 </div>
                 <div class="modal-subtitle">Nhấn nút bên dưới để copy code vào Executor:</div>
-                <div class="code-box" id="scriptCodeText">loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptPrime/PlsHub-BestUpdated/refs/heads/main/Txt"))()</div>
-                <button class="btn-purple" onclick="copyScript()">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                    Copy Script
-                </button>
+                <div class="code-box" id="scriptCodeText">Đang tải...</div>
+                <button class="btn-purple" onclick="copyScript()">Copy Script</button>
             </div>
         </div>
     </div>
@@ -280,10 +387,48 @@
     <div id="toast" class="toast">✓ Đã sao chép Script thành công!</div>
 
     <script>
+        // NƠI LƯU TRỮ CÁC SCRIPT (Bạn có thể ném script thật của bạn vào đây)
+        const scriptDatabase = {
+            // Danh sách script Blox Fruits
+            'banana': 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptPrime/BananaHub/main/Txt"))()',
+            'red': 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptPrime/RedHub/main/Txt"))()',
+            'x100luck': 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptPrime/X100Luck/main/Txt"))()',
+            'tay': 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptPrime/TayHub/main/Txt"))()',
+            'plshub': 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptPrime/PlsHub-BestUpdated/refs/heads/main/Txt"))()',
+            'gex': 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptPrime/GexHub/main/Txt"))()',
+            
+            // Danh sách script Gag2
+            'pet_seed': 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptPrime/PetSeed/main/Txt"))()',
+            'weather': 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptPrime/Weather/main/Txt"))()',
+            'gag3_sample': '-- Script Gag2 Hàng 3 đang chờ cập nhật',
+            'gag4_sample': '-- Script Gag2 Hàng 4 đang chờ cập nhật'
+        };
+
         const modal = document.getElementById('scriptModal');
         const toast = document.getElementById('toast');
 
-        function openModal() {
+        // Hàm đổi tab giữa Blox Fruits và Gag2
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.page-content').forEach(page => page.classList.remove('active'));
+
+            if (tabName === 'blox') {
+                document.getElementById('btn-blox').classList.add('active');
+                document.getElementById('page-blox').classList.add('active');
+            } else if (tabName === 'gag2') {
+                document.getElementById('btn-gag2').classList.add('active');
+                document.getElementById('page-gag2').classList.add('active');
+            }
+        }
+
+        // Hàm mở bảng popup hiển thị đúng tên và đúng mã script
+        function openModal(title, databaseKey) {
+            document.getElementById('modalTargetTitle').innerText = "🔥 " + title;
+            
+            // Lấy script từ database dựa trên từ khóa cài đặt, nếu không thấy sẽ báo đang cập nhật
+            const currentScript = scriptDatabase[databaseKey] || '-- Script đang được cập nhật...';
+            document.getElementById('scriptCodeText').innerText = currentScript;
+            
             modal.classList.add('active');
         }
 
@@ -306,7 +451,7 @@
                     toast.classList.remove('show');
                 }, 2500);
             }).catch(() => {
-                alert('Vui lòng quét chọn đoạn mã và copy thủ công!');
+                alert('Vui lòng quét chọn đoạn mã để copy thủ công!');
             });
         }
     </script>
